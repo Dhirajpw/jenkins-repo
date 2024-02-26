@@ -1,5 +1,5 @@
 # Use the official Tomcat image from Docker Hub
-FROM tomcat:latest
+FROM tomcat:8-jre8-slim
 
 # Set the working directory inside the container
 WORKDIR /usr/local/tomcat
@@ -8,10 +8,10 @@ WORKDIR /usr/local/tomcat
 RUN rm -rf webapps/*
 
 # Copy your WAR file into the webapps directory of Tomcat
-COPY path/to/your/application.war webapps/
+COPY /var/lib/jenkins/workspace/deploy/target/*.war webapps/
 
 # (Optional) Expose the default Tomcat port
-EXPOSE 8080
+EXPOSE 8081
 
 # Start Tomcat when the container starts
 CMD ["catalina.sh", "run"]
