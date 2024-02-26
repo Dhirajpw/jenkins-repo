@@ -8,7 +8,7 @@ WORKDIR /usr/local/tomcat
 RUN rm -rf webapps/*
 
 # Copy your WAR file into the webapps directory of Tomcat
-COPY /var/lib/jenkins/workspace/deploy/target/*.war webapps/
+COPY /var/lib/jenkins/workspace/demo/target/*.war webapps/
 
 # (Optional) Expose the default Tomcat port
 EXPOSE 8081
