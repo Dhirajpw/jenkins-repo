@@ -23,7 +23,7 @@ pipeline {
                 }
             }
         }
-        stage('build image on k8 ') {
+        stage('build image on k8s ') {
             steps {
                 script {
                     sh 'kubectl apply -f deployment.yaml'
