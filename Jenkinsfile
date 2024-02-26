@@ -30,7 +30,7 @@ pipeline {
                 }
             }
         }
-        stage('getting information') {
+        stage('getting info') {
             steps {
                 script {
                     sh '''kubectl get pods -o wide 
