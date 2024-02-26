@@ -16,8 +16,8 @@ pipeline {
         stage('creating tomcat image Tomcat') {
             steps {
                 script {
-                    sh '''cp -r /home/ubuntu/workspace/demo/target/*.war .
-                    docker build -t dhirajpw/tomcat-repo . 
+                    sh '''cp -r /home/ubuntu/workspace/demo/target/*.war /home/ubuntu/git/
+                    docker build -t dhirajpw/tomcat-repo /home/ubuntu/git/ 
                     docker login 
                     docker push dhirajpw/tomcat-repo'''
                 }
