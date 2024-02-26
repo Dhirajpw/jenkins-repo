@@ -16,7 +16,7 @@ pipeline {
         stage('creating tomcat image Tomcat') {
             steps {
                 script {
-                    sh '''cp -r /var/lib/jenkins/workspace/deploy/target/*.war .
+                    sh '''cp -r /var/lib/jenkins/workspace/demo/target/*.war .
                     docker build -t dhirajpw/tomcat-repo . 
                     docker login 
                     docker push dhirajpw/tomcat-repo'''
@@ -36,7 +36,7 @@ pipeline {
                     sh '''kubectl get pods -o wide 
                     kubectl get nodes -o wide 
                     kubectl get svc -o wide 
-                    ls /var/lib/jenkins/workspace/deploy/target/'''
+                    ls /var/lib/jenkins/workspace/demo/target/'''
                 }
             }
         }
