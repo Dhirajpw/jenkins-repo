@@ -11,7 +11,7 @@ RUN rm -rf webapps/*
 COPY /home/ubuntu/workspace/demo/target/*.war webapps/
 
 # (Optional) Expose the default Tomcat port
-EXPOSE 8081
+EXPOSE 8080
 
 # Start Tomcat when the container starts
 CMD ["catalina.sh", "run"]
